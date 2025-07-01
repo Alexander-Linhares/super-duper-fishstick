@@ -1,0 +1,49 @@
+.team-section {
+    text-align: center;
+    padding: 32px;
+    background: url(../../../public/imagens/fundo.png);
+}
+
+.team-section h3 {
+    font-size: 32px;
+    border-bottom: 4px solid;
+    padding-bottom: 8px;
+}
+
+.team-section .employees {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 32px;
+    gap: 32px;
+}
+
+.team-section__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.team-section .team-color {
+    position: absolute;
+    left: 2em;
+}
+
+.color-input {
+    background-color: #fff;
+}
+
+@media screen and (max-width: 800px){
+    .team-section .team-color {
+        position: relative;
+        left: 0;
+    }
+    .team-section__header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

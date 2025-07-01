@@ -1,0 +1,81 @@
+.employee-card {
+    position: relative;
+    width: 280px;
+    transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
+}
+
+.employee-card:hover{
+    transform: scale(102%);
+} 
+
+/* e-card header and image styles  */
+.employee-card img {
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    bottom: -50px;
+    user-select: none;
+}
+
+.employee-card .e-card__header {
+    background-color:  #F0F0F0;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/* e-card footer stayles */
+.employee-card .e-card__footer {
+    background: #FFFFFF;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 90px;
+    padding-bottom: 40px;
+}
+
+.employee-card .e-card__footer h4 {
+    color: #6278F7;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.employee-card .e-card__footer h5 {
+    font-size: 18px;
+    line-height: 22px;
+    color: #212121;
+    padding: 0 16px;
+}
+
+.employee-card .remove-button {
+    position: absolute;
+    visibility: visible;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    background-color: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
+.employee-card .remove-button:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.employee-card.animate-click {
+    animation: DropCard 0.2s ease-out forwards;
+}
+
+@keyframes DropCard {
+    0% {
+        transform: scale(100%);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(110%);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(50%);
+    }
+}
