@@ -13,11 +13,16 @@ function App() {
 
   const [teams, setTeam] = useState(mockedTeams);
   const [employeeList, setEmployees] = useState(mockedEmployeeList);
+  const [activeForm, setActiveForm] = useState('Funcionário');
 
   //adiciona um novo funcionário
   const addEmployee = (newEmployee) => {
     setEmployees([...employeeList, newEmployee]);
   };
+
+  const addTeam = (newTeam) => {
+    setTeam([...teams, newTeam]);
+  }
 
   //muda a cor principal do time na mockdata
   const changeTeamColor = (primary, secondary, teamCategory) => {
@@ -36,14 +41,19 @@ function App() {
       prevEmployeeList.filter(employee => employee.id !== employeeId));
   };
   
+  const changeForm = () => {
+    
+  }
 
   return (
     <div className="App">
       <Banner />
-      <Tabs></Tabs>
+      <Tabs activeTab={activeForm} onChangeTab={setActiveForm}></Tabs>
       <Form 
         title="Preencha os dados para criar o card do colaborador" 
-        submitEmployeeData={addEmployee}
+        onSubmitEmployeeData={addEmployee}
+        onSubmitTeamData={addTeam}
+        activeForm={activeForm}
         teams={teams.map(team => team.category)}
       />
       <section id="teams">
@@ -67,3 +77,4 @@ function App() {
 }
 
 export default App;
+

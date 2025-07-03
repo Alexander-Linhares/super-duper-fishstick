@@ -15,17 +15,14 @@
     border-radius: 20px;
     padding: 36px 64px;
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
-    animation-name: circularAppear;
-    animation-duration: 1.5s; /* Duração total da animação (pode ajustar) */
-    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Curva de aceleração/desaceleração para um salto */
-    animation-fill-mode: forwards; /* Mantém o estado final da animação */
-    /* Garanta que a posição inicial do elemento esteja correta no CSS padrão */
-    /* Ex: Se você quer que ele termine no centro, use flexbox ou grid no pai */
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .form-section form.desactive {
     visibility: hidden;
-    display: hidden;
+    display: none;
 }
 
 
@@ -35,26 +32,10 @@
     }
 }
 
-@keyframes circularAppear {
-    0% {
-        /* Posição inicial: bem acima e à esquerda, bem pequeno */
-        transform: translate(-100%, -100%) scale(0.1); /* Ajuste os valores conforme a necessidade */
-        opacity: 0; /* Começa invisível para o efeito de "aparecer" */
-    }
-    40% {
-        /* Meio do caminho: O elemento já cresceu bastante e está em movimento de arco */
-        /* Move para uma posição intermediária (pode ser um ponto mais "alto" ou "lateral" do arco) */
-        transform: translate(-50%, -20%) scale(0.8);
-        opacity: 1; /* Já está totalmente visível aqui */
-    }
-    70% {
-        /* Quase na posição final: Pequeno "overshoot" para um movimento mais natural */
-        /* Ex: passa um pouco do ponto final antes de voltar */
-        transform: translate(5%, -5%) scale(1.05); /* Pequeno zoom e translação extra */
-    }
-    100% {
-        /* Posição final: no local desejado, tamanho normal */
-        transform: translate(0, 0) scale(1);
-        opacity: 1;
-    }
+#color-input {
+    background-color: #f2f2f2;
+}
+
+#color-input input, #color-input div {
+    border: none;
 }

@@ -4,13 +4,12 @@ import { IoPersonSharp } from "react-icons/io5";
 import './tabs.css';
 import { useState } from "react";
 
-const Tabs = () => {
-
-    const [activeTab, setActiveTab] = useState('Funcionário');
+const Tabs = ({ activeTab, onChangeTab }) => {
 
     const handleClick = () => {
         const newTab = (activeTab === 'Funcionário')? 'Time' : 'Funcionário';
-        setActiveTab(newTab);
+        onChangeTab(newTab);
+        console.log(activeTab)
     }
 
     return (

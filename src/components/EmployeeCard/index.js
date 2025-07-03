@@ -30,6 +30,7 @@ const EmployeeCard = ({ id, name, role, srcImage, cardColor, onRemove }) => {
         }
     }
 
+    //Adiciona dinamicamente a calsse animate-click assim que o setIsAnimating(true) -> o componente irá realizar um update
     const cardClasses = `employee-card ${isAnimating ? 'animate-click' : ''}`;
 
     return (
