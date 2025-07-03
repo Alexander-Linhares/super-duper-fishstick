@@ -20,9 +20,18 @@ function App() {
     setEmployees([...employeeList, newEmployee]);
   };
 
+  //favorita um funcionário 
+  const favoriteEmployee = (employeeId) => {
+    setEmployees(employeeList.map((employee) => {
+      if (employee.id === employeeId)
+        employee.favorite = !employee.favorite;
+      return employee;
+    }));
+  };
+
   const addTeam = (newTeam) => {
     setTeam([...teams, newTeam]);
-  }
+  };
 
   //muda a cor principal do time na mockdata
   const changeTeamColor = (primary, secondary, teamCategory) => {
@@ -68,6 +77,7 @@ function App() {
                 employee => employee.team === team.category)}
               onRemove={removeEmployee}
               changeColor={changeTeamColor}
+              favoriteEmployee={favoriteEmployee}
             />
           )}
       </section>

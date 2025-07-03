@@ -4,7 +4,15 @@ import './team.css';
 import hexToRgba from 'hex-to-rgba';
 
 
-const Team = ({ category, primaryColor, secondaryColor, changeColor, employees, onRemove }) => {
+const Team = ({ 
+        category, 
+        primaryColor, 
+        secondaryColor, 
+        changeColor, 
+        employees, 
+        onRemove, 
+        favoriteEmployee 
+    }) => {
 
     const setColor = (primary) => {
         const secondary = hexToRgba(primary, 0.2)
@@ -32,8 +40,10 @@ const Team = ({ category, primaryColor, secondaryColor, changeColor, employees, 
                             name={employee.name} 
                             role={employee.role} 
                             srcImage={employee.image}
+                            favorite={employee.favorite}
                             cardColor={primaryColor}
-                            onRemove={onRemove}/>
+                            onRemove={onRemove}
+                            onFavorite={favoriteEmployee}/>
                     )}
                 </div>
             </section>

@@ -1,7 +1,7 @@
 .employee-card {
     position: relative;
     width: 280px;
-    transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
+    transition: transform 0.1s ease-in, box-shadow 0.1s ease-in;
 }
 
 .employee-card:hover{
@@ -58,6 +58,38 @@
     font-weight: bold;
 }
 
+.e-card__footer .favorite-button {
+    position: relative;
+    align-self: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.e-card__footer .favorite-button__icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.e-card__footer .favorite-button__icon.on {
+    visibility: visible;
+    z-index: 2;
+    animation: Punch 0.3s ease-in;
+}
+
+.e-card__footer .favorite-button__icon.off {
+    visibility: hidden;
+}
+
+.container {
+    position: relative;
+}
+
 .employee-card .remove-button:hover {
     color: rgba(0, 0, 0, 0.8);
 }
@@ -77,5 +109,28 @@
     100% {
         opacity: 0;
         transform: scale(50%);
+    }
+}
+
+@keyframes Punch {
+    0% {
+        transform: scale(0%);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(130%);
+        opacity: 0.4;
+    }
+    65% {
+        transform: scale(50%);
+        opacity: 0.7;
+    }
+    80% {
+        transform: scale(110%);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(100%);
+        opacity: 1;
     }
 }
